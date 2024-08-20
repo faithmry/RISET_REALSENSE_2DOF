@@ -93,7 +93,7 @@ private:
 
 public:
     uint16_t yaw_goal_position = 180 DEG2POSITION; // Goal position
-    u_int16_t pitch_goal_position = 210 DEG2POSITION; // Goal position
+    uint16_t pitch_goal_position = 210 DEG2POSITION; // Goal position
 
     // Static method to get the singleton instance
     static _ServoMX28& getInstance()

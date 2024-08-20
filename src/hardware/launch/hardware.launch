@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="hardware" type="servo" name="servo" output="screen" respawn="true"> </node>
+</launch>

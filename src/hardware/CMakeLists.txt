@@ -11,10 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   roslib
   std_msgs
-  geometry_msgs ##temp
+  geometry_msgs
 )
 
-# find_package(yaml-cpp REQUIRED)
+find_package(dynamixel_sdk REQUIRED)
 
 ## Generate messages in the 'msg' folder
 # add_message_files(
@@ -37,36 +37,11 @@ include
   ${catkin_INCLUDE_DIRS}
 )
 
-set(DYNAMIXEL_LIB 
-  src/dynamixel_sdk/group_bulk_read.cpp 
-  src/dynamixel_sdk/group_bulk_write.cpp
-  src/dynamixel_sdk/group_fast_bulk_read.cpp
-  src/dynamixel_sdk/group_fast_sync_read.cpp
-  src/dynamixel_sdk/group_handler.cpp
-  src/dynamixel_sdk/group_sync_read.cpp
-  src/dynamixel_sdk/group_sync_write.cpp
-  src/dynamixel_sdk/packet_handler.cpp
-  src/dynamixel_sdk/port_handler.cpp
-  src/dynamixel_sdk/protocol1_packet_handler.cpp
-  src/dynamixel_sdk/protocol2_packet_handler.cpp
-  src/dynamixel_sdk/port_handler_arduino.cpp
-  src/dynamixel_sdk/port_handler_linux.cpp
-  src/dynamixel_sdk/port_handler_windows.cpp
-  src/dynamixel_sdk/port_handler_mac.cpp)
-
 ## Declare a C++ executable
-# add_executable(motor_main src/motor_main.cpp ${MOTOR_LIB})
-# add_executable(stm_main src/stm_main.cpp ${STM_LIB})
-# add_executable(stm_ballhandling src/stm_ballhandling.cpp)
-# add_executable(stm_serial src/stm_serial.cpp)
-add_executable(servo src/servo_mx28.cpp ${DYNAMIXEL_LIB})
+add_executable(servo src/servo_mx28.cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(motor_main ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
-# target_link_libraries(stm_main ${catkin_LIBRARIES})
-# target_link_libraries(stm_ballhandling ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
-# target_link_libraries(stm_serial ${catkin_LIBRARIES})
-target_link_libraries(servo ${catkin_LIBRARIES})
+target_link_libraries(servo ${catkin_LIBRARIES} ${dynamixel_sdk_LIBRARIES})
 
 # add_dependencies(stm_main iris_msgs_generate_messages_cpp)
 # add_dependencies(stm_ballhandling iris_msgs_generate_messages_cpp)

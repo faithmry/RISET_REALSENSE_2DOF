@@ -6,10 +6,10 @@
 #include <ros/ros.h>
 
 //--ROS Messages
-#include <auv_msgs/RPY.msg>
+#include <geometry_msgs/Vector3.h>
 
 //--Dynamixel Header
-#include <dynamixel_sdk.h>
+#include <dynamixel_sdk/dynamixel_sdk.h>
 
 //--C++ Headers
 #include <stdlib.h>
@@ -29,22 +29,22 @@
 #define ADDR_PRESENT_POSITION 132
 
 //--Dynamixel Bytes Length for MX-28
-#define LEN_GOAL_POSITION 2
-#define LEN_PRESENT_POSITION 2
+#define LEN_GOAL_POSITION 4
+#define LEN_PRESENT_POSITION 4
 
 //--Dynamixel Properties
 #define PROTOCOL_VERSION 2.0 // See which protocol version is being used in the Dynamixel
 #define BAUDRATE 1000000
-#define PATH "/dev/ttyUSB0" // Check which port is being used on your controller
+#define PATH "/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0-port0" // Check which port is being used on your controller
 
 //--Dynamixel ID
-#define ID_YAW 1
-#define ID_PITCH 2
+#define YAW_ID 1
+#define PITCH_ID 2
 
 //--Dynamixel Limit Values
-#define MOVING_STATUS_THRESHOLD 10 // Resolution of 1 degree is estimated to be 11,375
-#define YAW_MINIMUM 100 DEG2POSITION // Minimum position for yaw servo
-#define YAW_MAXIMUM 260 DEG2POSITION // Maximum position for yaw servo
+#define MOVING_STATUS_THRESHOLD 10     // Resolution of 1 degree is estimated to be 11,375
+#define YAW_MINIMUM 100 DEG2POSITION   // Minimum position for yaw servo
+#define YAW_MAXIMUM 260 DEG2POSITION   // Maximum position for yaw servo
 #define PITCH_MINIMUM 180 DEG2POSITION // Minimum position for pitch servo
 #define PITCH_MAXIMUM 240 DEG2POSITION // Maximum position for pitch servo
 
@@ -57,53 +57,47 @@ ros::Subscriber rpy_sub;
 //--Publisher
 ros::Publisher rpy_pub;
 
-class _ServoMX28 {
+class _ServoMX28
+{
 private:
-    dynamixel::PortHandler* portHandler;
-    dynamixel::PacketHandler* packetHandler;
-    dynamixel::GroupSyncWrite* groupSyncWrite;
-    dynamixel::GroupSyncRead* groupSyncRead;
+    dynamixel::PortHandler *portHandler;
+    dynamixel::PacketHandler *packetHandler;
+    dynamixel::GroupSyncWrite *groupSyncWrite;
+    dynamixel::GroupSyncRead *groupSyncRead;
 
-    int dxl_comm_result; // Communication result
+    int dxl_comm_result;              // Communication result
     bool dxl_addparam_result = false; // addParam result
-    bool dxl_getdata_result = false; // GetParam result
-    uint8_t dxl_error; // DYNAMIXEL error
+    bool dxl_getdata_result = false;  // GetParam result
+    uint8_t dxl_error;                // DYNAMIXEL error
 
     // Private constructor to prevent instantiation
     _ServoMX28()
-        : portHandler(nullptr)
-        , packetHandler(nullptr)
-        , groupSyncWrite(nullptr)
-        , groupSyncRead(nullptr)
-        , dxl_comm_result(0)
-        , dxl_addparam_result(false)
-        , dxl_getdata_result(false)
-        , dxl_error(0)
+        : portHandler(nullptr), packetHandler(nullptr), groupSyncWrite(nullptr), groupSyncRead(nullptr), dxl_comm_result(0), dxl_addparam_result(false), dxl_getdata_result(false), dxl_error(0)
     {
     }
 
     // Delete copy constructor and assignment operator
-    _ServoMX28(const _ServoMX28&) = delete;
-    _ServoMX28& operator=(const _ServoMX28&) = delete;
+    _ServoMX28(const _ServoMX28 &) = delete;
+    _ServoMX28 &operator=(const _ServoMX28 &) = delete;
 
-    uint8_t param_yaw_goal_position[2]; // Goal position parameter written to the yaw servo
-    uint8_t param_pitch_goal_position[2]; // Goal position parameter written to the pitch servo
-    int16_t yaw_present_position = 0; // Present position
-    int16_t pitch_present_position = 0; // Present position
+    uint8_t param_yaw_goal_position[4];   // Goal position parameter written to the yaw servo
+    uint8_t param_pitch_goal_position[4]; // Goal position parameter written to the pitch servo
+    int16_t yaw_present_position = 0;     // Present position
+    int16_t pitch_present_position = 0;   // Present position
 
 public:
-    uint16_t yaw_goal_position = 180 DEG2POSITION; // Goal position
-    uint16_t pitch_goal_position = 210 DEG2POSITION; // Goal position
+    int16_t yaw_goal_position = 90 DEG2POSITION;    // Goal position
+    int16_t pitch_goal_position = 150 DEG2POSITION; // Goal position
 
     // Static method to get the singleton instance
-    static _ServoMX28& getInstance()
+    static _ServoMX28 &getInstance()
     {
         static _ServoMX28 instance;
         return instance;
     }
 
-    void servo_routine_callback(const ros::TimerEvent& event);
-    void rpy_callback(const auv_msgs::RPY::ConstPtr& msg);
+    void servo_routine_callback(const ros::TimerEvent &event);
+    void rpy_callback(const geometry_msgs::Vector3::ConstPtr &msg);
     void servo_mx28_init();
     int set_torque(uint8_t _id, uint8_t _flag);
     int disable_torque(uint8_t _id, uint8_t _flag);

@@ -70,239 +70,14 @@ hardware/CMakeFiles/servo.dir/src/servo_mx28.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/servo_mx28.cpp.s"
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/servo_mx28.cpp -o CMakeFiles/servo.dir/src/servo_mx28.cpp.s
 
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_read.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_read.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_read.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_read.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_write.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_write.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_write.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_bulk_write.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_bulk_read.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_bulk_read.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_bulk_read.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_bulk_read.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_sync_read.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_sync_read.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_sync_read.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_fast_sync_read.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_handler.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_handler.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_handler.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_read.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_read.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_read.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_read.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_write.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_write.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_write.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/group_sync_write.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/packet_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/packet_handler.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/packet_handler.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/packet_handler.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol1_packet_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol1_packet_handler.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol1_packet_handler.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol1_packet_handler.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol2_packet_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol2_packet_handler.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol2_packet_handler.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/protocol2_packet_handler.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_arduino.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_arduino.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_arduino.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_arduino.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_linux.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_linux.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_linux.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_linux.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_windows.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_windows.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_windows.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_windows.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.s
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o: hardware/CMakeFiles/servo.dir/flags.make
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o: /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_mac.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o -c /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_mac.cpp
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.i"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_mac.cpp > CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.i
-
-hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.s"
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/faith/Documents/RISET_REALSENSE_2DoF/src/hardware/src/dynamixel_sdk/port_handler_mac.cpp -o CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.s
-
 # Object files for target servo
 servo_OBJECTS = \
-"CMakeFiles/servo.dir/src/servo_mx28.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o" \
-"CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o"
+"CMakeFiles/servo.dir/src/servo_mx28.cpp.o"
 
 # External object files for target servo
 servo_EXTERNAL_OBJECTS =
 
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/servo_mx28.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_read.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_bulk_write.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_handler.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_read.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/group_sync_write.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/packet_handler.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_arduino.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_linux.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_windows.cpp.o
-/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/src/dynamixel_sdk/port_handler_mac.cpp.o
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/build.make
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libroscpp.so
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libpthread.so
@@ -326,8 +101,32 @@ servo_EXTERNAL_OBJECTS =
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libdynamixel_sdk.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libroscpp.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/librosconsole.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/librostime.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libcpp_common.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libroslib.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/librospack.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: /opt/ros/noetic/lib/libdynamixel_sdk.so
 /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo: hardware/CMakeFiles/servo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/faith/Documents/RISET_REALSENSE_2DoF/devel/lib/hardware/servo"
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build/hardware && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/servo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

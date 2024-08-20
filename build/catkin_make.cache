@@ -1,0 +1,2 @@
+hardware:vision
+-DCATKIN_DEVEL_PREFIX=/home/faith/Documents/RISET_REALSENSE_2DoF/devel -DCMAKE_INSTALL_PREFIX=/home/faith/Documents/RISET_REALSENSE_2DoF/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/faith/Documents/RISET_REALSENSE_2DoF/install
+
+Name: hardware
+Description: Description of hardware
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

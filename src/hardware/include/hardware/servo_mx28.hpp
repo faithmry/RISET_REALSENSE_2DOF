@@ -39,7 +39,7 @@
 
 //--Dynamixel Offset
 #define YAW_OFFSET_POSITION 1024
-#define PITCH_OFFSET_POSITIOB 2559
+#define PITCH_OFFSET_POSITION 2559
 
 //--Dynamixel ID
 #define YAW_ID 1
@@ -72,13 +72,10 @@ private:
     ~Servo_MX28()
     {
         // Disable DYNAMIXEL Torque
-        dxl_comm_result = disable_torque(YAW_ID, DISABLE);
+        dxl_comm_result = setTorque(YAW_ID, DISABLE);
         (dxl_comm_result == COMM_SUCCESS) ? printf("Succeeded to disable torque!\n") : printf("Failed to disable torque!\n");
-        dxl_comm_result = disable_torque(PITCH_ID, DISABLE);
+        dxl_comm_result = setTorque(PITCH_ID, DISABLE);
         (dxl_comm_result == COMM_SUCCESS) ? printf("Succeeded to disable torque!\n") : printf("Failed to disable torque!\n");
-
-        // Close port
-        (portHandler->closePort()) ? printf("Succeeded to close the port!\n") : printf("Failed to close the port!\n");
 
         // Clear syncwrite parameter storage
         groupSyncWrite->clearParam();

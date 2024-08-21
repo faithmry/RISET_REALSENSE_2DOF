@@ -91,7 +91,7 @@ void Servo_MX28::callbackRoutine(const ros::TimerEvent& event)
     else if (rpy_msg.y < -180)
         rpy_msg.y += 360;
 
-    rpy_pub.publish(rpy_msg);
+    pub_servo2pc.publish(rpy_msg);
 }
 
 void Servo_MX28::writeGoalPosition()

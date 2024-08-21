@@ -2,46 +2,56 @@ cmake_minimum_required(VERSION 3.0.2)
 project(vision)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++14)
+# add_compile_options(-std=c++11)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv_bridge
-  image_transport
   roscpp
   std_msgs
-  roslib
 )
-
 find_package(OpenCV REQUIRED)
-find_package(yaml-cpp REQUIRED)
+find_package(realsense2 REQUIRED)
+find_package(Eigen3 REQUIRED)
 
-## INCLUDE_DIRS: uncomment this if your package contains header files
+## Generate messages in the 'msg' folder
+# add_message_files(
+#   FILES
+#   Message1.msg
+#   Message2.msg
+# )
+
+## Generate added messages and services with any dependencies listed here
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+# )
+
 catkin_package(
- INCLUDE_DIRS include
+#  INCLUDE_DIRS include
+#  LIBRARIES vision
+#  CATKIN_DEPENDS roscpp std_msgs
+#  DEPENDS system_lib
 )
 
-## Specify additional locations of header files
 include_directories(
-include
+  include
   ${catkin_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
 )
 
-# ## Declare a C++ executable
-# add_executable(capture src/capture.cpp)
-# add_executable(detection src/detection.cpp)
-# add_executable(main src/main.cpp)
-# add_executable(web_adapter src/web_adapter.cpp)
+set(REALSENSE_DEPS
+  realsense2
+)
 
-# ## Specify libraries to link a library or executable target against
-# target_link_libraries(capture ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${YAML_CPP_LIBRARIES})
-# target_link_libraries(detection ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${YAML_CPP_LIBRARIES})
-# target_link_libraries(main ${catkin_LIBRARIES})
-# target_link_libraries(web_adapter ${catkin_LIBRARIES} ${YAML_CPP_LIBRARIES})
+add_executable(realsense src/realsense.cpp include/vision/cv-helpers.hpp)
+set_property(TARGET realsense PROPERTY CXX_STANDARD 11)
+target_link_libraries(realsense  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})
 
-# add_dependencies(capture iris_msgs_generate_messages_cpp)
-# add_dependencies(detection iris_msgs_generate_messages_cpp)
-# add_dependencies(web_adapter iris_msgs_generate_messages_cpp)
+add_executable(capture src/capture.cpp include/vision/cv-helpers.hpp include/vision/example-imgui.hpp)
+set_property(TARGET capture PROPERTY CXX_STANDARD 11)
+target_link_libraries(capture  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})
+
+add_executable(ball src/ball.cpp)
+set_property(TARGET ball PROPERTY CXX_STANDARD 11)
+target_link_libraries(ball  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${EIGEN3_LIBRARIES})
+
+# include_directories(../ ../../examples)

@@ -1,3 +1,11 @@
+/**
+ * @brief Servo_MX28 class source file
+ * @note Yaw servo ID: 1, Pitch servo ID: 2
+ * @note Yaw orientation is similar with orientation robot (front is 90 degree)
+ * @note Pitch orientation is similar with orientation robot (front is 0 degree)
+ * @note Servo movement range: Yaw (10 ~ 170 degree), Pitch (-45 ~ 15 degree) relative to the camera
+ */
+
 #include "hardware/servo_mx28.hpp"
 
 Servo_MX28* servo = Servo_MX28::getInstance();

@@ -37,70 +37,102 @@
 #define BAUDRATE 1000000
 #define PATH "/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0-port0" // Check which port is being used on your controller
 
+//--Dynamixel Offset
+#define YAW_OFFSET_POSITION 1024
+#define PITCH_OFFSET_POSITIOB 2559
+
 //--Dynamixel ID
 #define YAW_ID 1
 #define PITCH_ID 2
 
-//--Dynamixel Limit Values
-#define MOVING_STATUS_THRESHOLD 10     // Resolution of 1 degree is estimated to be 11,375
-#define YAW_MINIMUM 100 DEG2POSITION   // Minimum position for yaw servo
-#define YAW_MAXIMUM 260 DEG2POSITION   // Maximum position for yaw servo
-#define PITCH_MINIMUM 180 DEG2POSITION // Minimum position for pitch servo
-#define PITCH_MAXIMUM 240 DEG2POSITION // Maximum position for pitch servo
-
-//--Timer
-ros::Timer servo_routine;
-
-//--Subscriber
-ros::Subscriber rpy_sub;
-
-//--Publisher
-ros::Publisher rpy_pub;
-
-class _ServoMX28
-{
+class Servo_MX28 {
 private:
-    dynamixel::PortHandler *portHandler;
-    dynamixel::PacketHandler *packetHandler;
-    dynamixel::GroupSyncWrite *groupSyncWrite;
-    dynamixel::GroupSyncRead *groupSyncRead;
+    dynamixel::PortHandler* portHandler;
+    dynamixel::PacketHandler* packetHandler;
+    dynamixel::GroupSyncWrite* groupSyncWrite;
+    dynamixel::GroupSyncRead* groupSyncRead;
 
-    int dxl_comm_result;              // Communication result
+    int dxl_comm_result; // Communication result
     bool dxl_addparam_result = false; // addParam result
-    bool dxl_getdata_result = false;  // GetParam result
-    uint8_t dxl_error;                // DYNAMIXEL error
+    bool dxl_getdata_result = false; // GetParam result
+    uint8_t dxl_error; // DYNAMIXEL error
 
     // Private constructor to prevent instantiation
-    _ServoMX28()
-        : portHandler(nullptr), packetHandler(nullptr), groupSyncWrite(nullptr), groupSyncRead(nullptr), dxl_comm_result(0), dxl_addparam_result(false), dxl_getdata_result(false), dxl_error(0)
+    Servo_MX28()
+        : portHandler(nullptr)
+        , packetHandler(nullptr)
+        , groupSyncWrite(nullptr)
+        , groupSyncRead(nullptr)
+        , dxl_comm_result(0)
+        , dxl_addparam_result(false)
+        , dxl_getdata_result(false)
+        , dxl_error(0)
     {
     }
+    ~Servo_MX28()
+    {
+        // Disable DYNAMIXEL Torque
+        dxl_comm_result = disable_torque(YAW_ID, DISABLE);
+        (dxl_comm_result == COMM_SUCCESS) ? printf("Succeeded to disable torque!\n") : printf("Failed to disable torque!\n");
+        dxl_comm_result = disable_torque(PITCH_ID, DISABLE);
+        (dxl_comm_result == COMM_SUCCESS) ? printf("Succeeded to disable torque!\n") : printf("Failed to disable torque!\n");
 
-    // Delete copy constructor and assignment operator
-    _ServoMX28(const _ServoMX28 &) = delete;
-    _ServoMX28 &operator=(const _ServoMX28 &) = delete;
+        // Close port
+        (portHandler->closePort()) ? printf("Succeeded to close the port!\n") : printf("Failed to close the port!\n");
 
-    uint8_t param_yaw_goal_position[4];   // Goal position parameter written to the yaw servo
+        // Clear syncwrite parameter storage
+        groupSyncWrite->clearParam();
+        // Clear syncread parameter storage
+        groupSyncRead->clearParam();
+
+        // Delete port handler
+        delete portHandler;
+        // Delete packet handler
+        delete packetHandler;
+        // Delete syncwrite instance
+        delete groupSyncWrite;
+        // Delete syncread instance
+        delete groupSyncRead;
+    }
+
+    uint8_t param_yaw_goal_position[4]; // Goal position parameter written to the yaw servo
     uint8_t param_pitch_goal_position[4]; // Goal position parameter written to the pitch servo
-    int16_t yaw_present_position = 0;     // Present position
-    int16_t pitch_present_position = 0;   // Present position
+
+    std::vector<uint16_t> goal_position = { 2047, 2559 }; // Goal position for yaw and pitch servos
+    std::vector<uint16_t> present_position = { 0, 0 }; // Present position for yaw and pitch servos
+
+    int16_t yaw_present_position = 0; // Present position
+    int16_t pitch_present_position = 0; // Present position
 
 public:
-    int16_t yaw_goal_position = 90 DEG2POSITION;    // Goal position
-    int16_t pitch_goal_position = 150 DEG2POSITION; // Goal position
-
     // Static method to get the singleton instance
-    static _ServoMX28 &getInstance()
+    static Servo_MX28* getInstance()
     {
-        static _ServoMX28 instance;
-        return instance;
+        static Servo_MX28 instance;
+        return &instance;
     }
+    Servo_MX28(Servo_MX28 const&) = delete;
+    void operator=(Servo_MX28 const&) = delete;
 
-    void servo_routine_callback(const ros::TimerEvent &event);
-    void rpy_callback(const geometry_msgs::Vector3::ConstPtr &msg);
-    void servo_mx28_init();
-    int set_torque(uint8_t _id, uint8_t _flag);
-    int disable_torque(uint8_t _id, uint8_t _flag);
+    //--ROS Publisher
+    ros::Publisher pub_servo2pc;
+
+    //--ROS Subscriber
+    ros::Subscriber sub_pc2servo;
+
+    //--ROS Timer
+    ros::Timer tim_routine;
+
+    void init(ros::NodeHandle* nh);
+    void initMX28();
+    void writeGoalPosition();
+    void readPresentPosition();
+    int8_t setTorque(uint8_t _id, uint8_t _flag);
+    std::vector<uint16_t> jointConvertToPosition(std::vector<double> joint_angle);
+    std::vector<double> jointConvertToDegree(std::vector<uint16_t> joint_position);
+
+    void callbackRoutine(const ros::TimerEvent& event);
+    void callbackSubscribeRPY(const geometry_msgs::Vector3::ConstPtr& msg);
 };
 
 #endif

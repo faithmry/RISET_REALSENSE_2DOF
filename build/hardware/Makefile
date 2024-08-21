@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hardware/CMakeFiles/servo.dir/rule:
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f CMakeFiles/Makefile2 hardware/CMakeFiles/servo.dir/rule
-.PHONY : hardware/CMakeFiles/servo.dir/rule
-
-# Convenience name for target.
-servo: hardware/CMakeFiles/servo.dir/rule
-
-.PHONY : servo
-
-# fast build rule for target.
-servo/fast:
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f hardware/CMakeFiles/servo.dir/build.make hardware/CMakeFiles/servo.dir/build
-.PHONY : servo/fast
-
-# Convenience name for target.
 hardware/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f CMakeFiles/Makefile2 hardware/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : hardware/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -482,33 +467,6 @@ rosgraph_msgs_generate_messages_py/fast:
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f hardware/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make hardware/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
-src/servo_mx28.o: src/servo_mx28.cpp.o
-
-.PHONY : src/servo_mx28.o
-
-# target to build an object file
-src/servo_mx28.cpp.o:
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f hardware/CMakeFiles/servo.dir/build.make hardware/CMakeFiles/servo.dir/src/servo_mx28.cpp.o
-.PHONY : src/servo_mx28.cpp.o
-
-src/servo_mx28.i: src/servo_mx28.cpp.i
-
-.PHONY : src/servo_mx28.i
-
-# target to preprocess a source file
-src/servo_mx28.cpp.i:
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f hardware/CMakeFiles/servo.dir/build.make hardware/CMakeFiles/servo.dir/src/servo_mx28.cpp.i
-.PHONY : src/servo_mx28.cpp.i
-
-src/servo_mx28.s: src/servo_mx28.cpp.s
-
-.PHONY : src/servo_mx28.s
-
-# target to generate assembly for a file
-src/servo_mx28.cpp.s:
-	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f hardware/CMakeFiles/servo.dir/build.make hardware/CMakeFiles/servo.dir/src/servo_mx28.cpp.s
-.PHONY : src/servo_mx28.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -518,7 +476,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... servo"
 	@echo "... install/local"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
@@ -543,9 +500,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... src/servo_mx28.o"
-	@echo "... src/servo_mx28.i"
-	@echo "... src/servo_mx28.s"
 .PHONY : help
 
 

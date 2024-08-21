@@ -8,9 +8,9 @@
 
 #include "hardware/servo_mx28.hpp"
 
-Servo_MX28* servo = Servo_MX28::getInstance();
+Servo_MX28 *servo = Servo_MX28::getInstance();
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     ros::init(argc, argv, "servo_mx28");
     ros::NodeHandle nh;
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     return 0;
 }
 
-void Servo_MX28::init(ros::NodeHandle* nh)
+void Servo_MX28::init(ros::NodeHandle *nh)
 {
     initMX28();
 
@@ -63,13 +63,13 @@ void Servo_MX28::initMX28()
     (dxl_addparam_result) ? printf("Succeeded to add parameter for present position!\n") : printf("Failed to add parameter for present position!\n");
 }
 
-void Servo_MX28::callbackSubscribeRPY(const geometry_msgs::Vector3::ConstPtr& msg)
+void Servo_MX28::callbackSubscribeRPY(const geometry_msgs::Vector3::ConstPtr &msg)
 {
     goal_position.clear();
-    goal_position = jointConvertToPosition({ msg->z, msg->y });
+    goal_position = jointConvertToPosition({msg->z, msg->y});
 }
 
-void Servo_MX28::callbackRoutine(const ros::TimerEvent& event)
+void Servo_MX28::callbackRoutine(const ros::TimerEvent &event)
 {
     checkTorque();
     writeGoalPosition();
@@ -101,7 +101,8 @@ void Servo_MX28::writeGoalPosition()
     setTorque(PITCH_ID, ENABLE);
     packetHandler->read1ByteRx(portHandler, YAW_ID, ADDR_TORQUE_ENABLE, &dxl_error);
     // if torque is not enabled enable it
-    if (dxl_error == 0) {
+    if (dxl_error == 0)
+    {
         setTorque(YAW_ID, ENABLE);
     }
     memcpy(param_yaw_goal_position, &goal_position.at(0), sizeof(goal_position.at(0)));
@@ -129,10 +130,12 @@ int8_t Servo_MX28::setTorque(uint8_t _id, uint8_t _flag)
 
 void Servo_MX28::checkTorque()
 {
-    for (int i = 1; i <= 2; i++) {
+    for (int i = 1; i <= 2; i++)
+    {
         uint8_t torque_status = 0;
         dxl_comm_result = packetHandler->read1ByteTxRx(portHandler, i, ADDR_TORQUE_ENABLE, &torque_status, &dxl_error);
-        if (dxl_comm_result != COMM_SUCCESS || dxl_error != 0) {
+        if (dxl_comm_result != COMM_SUCCESS || dxl_error != 0)
+        {
             initMX28();
         }
 
@@ -143,20 +146,22 @@ void Servo_MX28::checkTorque()
 
 std::vector<uint16_t> Servo_MX28::jointConvertToPosition(std::vector<double> joint_angle)
 {
-    if (joint_angle.size() != 2) {
+    if (joint_angle.size() != 2)
+    {
         printf("Invalid joint angle size\n");
         return std::vector<uint16_t>();
     }
 
-    return { YAW_OFFSET_POSITION + joint_angle[0] DEG2POSITION, PITCH_OFFSET_POSITION + joint_angle[1] DEG2POSITION };
+    return {YAW_OFFSET_POSITION + joint_angle[0] DEG2POSITION, PITCH_OFFSET_POSITION + joint_angle[1] DEG2POSITION};
 }
 
 std::vector<double> Servo_MX28::jointConvertToDegree(std::vector<uint16_t> joint_position)
 {
-    if (joint_position.size() != 2) {
+    if (joint_position.size() != 2)
+    {
         printf("Invalid joint position size\n");
         return std::vector<double>();
     }
 
-    return { (joint_position[0] - YAW_OFFSET_POSITION) POSITION2DEG, (joint_position[1] - PITCH_OFFSET_POSITION) POSITION2DEG };
+    return {(joint_position[0] - YAW_OFFSET_POSITION) POSITION2DEG, (joint_position[1] - PITCH_OFFSET_POSITION) POSITION2DEG};
 }

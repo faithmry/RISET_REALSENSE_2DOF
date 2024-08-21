@@ -8,6 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   geometry_msgs
+  image_transport
+  cv_bridge
 )
 find_package(OpenCV REQUIRED)
 find_package(realsense2 REQUIRED)
@@ -43,5 +45,5 @@ set(REALSENSE_DEPS
   realsense2
 )
 
-add_executable(capture src/capture.cpp)
-target_link_libraries(capture  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})
+add_executable(capture_rs src/capture_rs.cpp)
+target_link_libraries(capture_rs  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})

@@ -309,6 +309,9 @@ EMPY_EXECUTABLE:FILEPATH=EMPY_EXECUTABLE-NOTFOUND
 //Empy script
 EMPY_SCRIPT:STRING=/usr/lib/python3/dist-packages/em.py
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //Path to a library.
 GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
 
@@ -483,7 +486,7 @@ image_transport_DIR:PATH=/opt/ros/noetic/share/image_transport/cmake
 iris_msgs_DIR:PATH=iris_msgs_DIR-NOTFOUND
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/librospack.so
+lib:FILEPATH=/opt/ros/noetic/lib/libcv_bridge.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
@@ -493,6 +496,9 @@ message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
+
+//The directory containing a CMake configuration file for realsense2.
+realsense2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/realsense2
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake

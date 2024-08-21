@@ -285,19 +285,6 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named servo
-
-# Build rule for target.
-servo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 servo
-.PHONY : servo
-
-# fast build rule for target.
-servo/fast:
-	$(MAKE) -f hardware/CMakeFiles/servo.dir/build.make hardware/CMakeFiles/servo.dir/build
-.PHONY : servo/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -558,6 +545,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named capture_rs
+
+# Build rule for target.
+capture_rs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 capture_rs
+.PHONY : capture_rs
+
+# fast build rule for target.
+capture_rs/fast:
+	$(MAKE) -f vision/CMakeFiles/capture_rs.dir/build.make vision/CMakeFiles/capture_rs.dir/build
+.PHONY : capture_rs/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
 
 # Build rule for target.
@@ -644,7 +644,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... servo"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
@@ -665,6 +664,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... capture_rs"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"

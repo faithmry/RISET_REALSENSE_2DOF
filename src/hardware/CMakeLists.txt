@@ -38,10 +38,10 @@ include
 )
 
 ## Declare a C++ executable
-add_executable(servo src/servo_mx28.cpp)
+# add_executable(servo src/servo_mx28.cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(servo ${catkin_LIBRARIES} ${dynamixel_sdk_LIBRARIES})
+# target_link_libraries(servo ${catkin_LIBRARIES} ${dynamixel_sdk_LIBRARIES})
 
 # add_dependencies(stm_main iris_msgs_generate_messages_cpp)
 # add_dependencies(stm_ballhandling iris_msgs_generate_messages_cpp)

@@ -68,18 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -135,6 +123,18 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/faith/Documents/RISET_REALSENSE_2DoF/build/CMakeFiles /home/faith/Documents/RISET_REALSENSE_2DoF/build/vision/CMakeFiles/progress.marks
@@ -166,6 +166,21 @@ preinstall/fast:
 depend:
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+vision/CMakeFiles/capture_rs.dir/rule:
+	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/capture_rs.dir/rule
+.PHONY : vision/CMakeFiles/capture_rs.dir/rule
+
+# Convenience name for target.
+capture_rs: vision/CMakeFiles/capture_rs.dir/rule
+
+.PHONY : capture_rs
+
+# fast build rule for target.
+capture_rs/fast:
+	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f vision/CMakeFiles/capture_rs.dir/build.make vision/CMakeFiles/capture_rs.dir/build
+.PHONY : capture_rs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
@@ -242,6 +257,33 @@ sensor_msgs_generate_messages_cpp/fast:
 	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
+src/capture_rs.o: src/capture_rs.cpp.o
+
+.PHONY : src/capture_rs.o
+
+# target to build an object file
+src/capture_rs.cpp.o:
+	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f vision/CMakeFiles/capture_rs.dir/build.make vision/CMakeFiles/capture_rs.dir/src/capture_rs.cpp.o
+.PHONY : src/capture_rs.cpp.o
+
+src/capture_rs.i: src/capture_rs.cpp.i
+
+.PHONY : src/capture_rs.i
+
+# target to preprocess a source file
+src/capture_rs.cpp.i:
+	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f vision/CMakeFiles/capture_rs.dir/build.make vision/CMakeFiles/capture_rs.dir/src/capture_rs.cpp.i
+.PHONY : src/capture_rs.cpp.i
+
+src/capture_rs.s: src/capture_rs.cpp.s
+
+.PHONY : src/capture_rs.s
+
+# target to generate assembly for a file
+src/capture_rs.cpp.s:
+	cd /home/faith/Documents/RISET_REALSENSE_2DoF/build && $(MAKE) -f vision/CMakeFiles/capture_rs.dir/build.make vision/CMakeFiles/capture_rs.dir/src/capture_rs.cpp.s
+.PHONY : src/capture_rs.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,17 +291,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... install/local"
+	@echo "... capture_rs"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... src/capture_rs.o"
+	@echo "... src/capture_rs.i"
+	@echo "... src/capture_rs.s"
 .PHONY : help
 
 

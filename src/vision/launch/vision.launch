@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="vision" type="capture_rs" name="capture_rs" output="screen" respawn="true"> </node>
+</launch>

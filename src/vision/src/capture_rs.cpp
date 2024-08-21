@@ -1,6 +1,6 @@
-#include "vision/capture.hpp"
+#include "vision/capture_rs.hpp"
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     ros::init(argc, argv, "capture_rs");
     ros::NodeHandle nh;
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 void init()
 {
     // Add streams of gyro and accelerometer to configuration
-    cfg.enable_stream(RS2_STREAM_ACCEL, RS2_FORMAT_MOTION_XYZ32F);
+    // cfg.enable_stream(RS2_STREAM_ACCEL, RS2_FORMAT_MOTION_XYZ32F);
     cfg.enable_stream(RS2_STREAM_GYRO, RS2_FORMAT_MOTION_XYZ32F);
 
     cfg.enable_stream(RS2_STREAM_COLOR, WIDTH_RGB, HEIGHT_RGB, RS2_FORMAT_RGB8, 60);
@@ -31,7 +31,7 @@ void init()
     pipes.start(cfg);
 }
 
-void callbackTimer(const ros::TimerEvent&)
+void callbackTimer(const ros::TimerEvent &)
 {
     rs2::frameset frameset = pipes.wait_for_frames();
     frameset = align_to_color.process(frameset);
@@ -42,21 +42,23 @@ void callbackTimer(const ros::TimerEvent&)
     auto colorized_depth = c.colorize(depth);
 
     // Convert the frames to OpenCV Mat
-    Mat mat_color = frame_to_mat(color);
-    Mat mat_colorized_depth = frame_to_mat(colorized_depth);
+    Mat mat_color = frameToMat(color);
+    Mat mat_colorized_depth = frameToMat(colorized_depth);
 
     // Get the motion frame from the frameset
     auto frame = frameset.first_or_default(RS2_STREAM_GYRO);
 
     // Cast the frame that arrived to motion frame
     auto motion = frame.as<rs2::motion_frame>();
-    if (motion && motion.get_profile().stream_type() == RS2_STREAM_GYRO && motion.get_profile().format() == RS2_FORMAT_MOTION_XYZ32F) {
+    if (motion && motion.get_profile().stream_type() == RS2_STREAM_GYRO && motion.get_profile().format() == RS2_FORMAT_MOTION_XYZ32F)
+    {
         double ts = motion.get_timestamp();
         rs2_vector gyro_data = motion.get_motion_data();
         processGyro(gyro_data, ts);
     }
 
-    if (motion && motion.get_profile().stream_type() == RS2_STREAM_ACCEL && motion.get_profile().format() == RS2_FORMAT_MOTION_XYZ32F) {
+    if (motion && motion.get_profile().stream_type() == RS2_STREAM_ACCEL && motion.get_profile().format() == RS2_FORMAT_MOTION_XYZ32F)
+    {
         rs2_vector accel_data = motion.get_motion_data();
         processAccel(accel_data);
     }
@@ -124,12 +126,15 @@ void processAccel(rs2_vector accel_data)
 
     // If it is the first iteration, set initial pose of camera according to accelerometer data (note the different handling for Y axis)
     std::lock_guard<std::mutex> lock(theta_mtx);
-    if (firstAccel) {
+    if (firstAccel)
+    {
         firstAccel = false;
         theta = accel_angle;
         // Since we can't infer the angle around Y axis using accelerometer data, we'll use PI as a convetion for the initial pose
         theta.y = PI_FL;
-    } else {
+    }
+    else
+    {
         /*
         Apply Complementary Filter:
             - high-pass filter = theta * alpha:  allows short-duration signals to pass through while filtering out signals
@@ -142,7 +147,7 @@ void processAccel(rs2_vector accel_data)
     printf("Accel Pitch: %f, Accel Roll: %f\n", accel_angle.x * RAD_TO_DEG, accel_angle.z * RAD_TO_DEG);
 }
 
-Mat frameToMat(const rs2::frame& f)
+Mat frameToMat(const rs2::frame &f)
 {
     using namespace cv;
     using namespace rs2;
@@ -151,25 +156,34 @@ Mat frameToMat(const rs2::frame& f)
     const int w = vf.get_width();
     const int h = vf.get_height();
 
-    if (f.get_profile().format() == RS2_FORMAT_BGR8) {
-        return Mat(Size(w, h), CV_8UC3, (void*)f.get_data(), Mat::AUTO_STEP);
-    } else if (f.get_profile().format() == RS2_FORMAT_RGB8) {
-        auto r_rgb = Mat(Size(w, h), CV_8UC3, (void*)f.get_data(), Mat::AUTO_STEP);
+    if (f.get_profile().format() == RS2_FORMAT_BGR8)
+    {
+        return Mat(Size(w, h), CV_8UC3, (void *)f.get_data(), Mat::AUTO_STEP);
+    }
+    else if (f.get_profile().format() == RS2_FORMAT_RGB8)
+    {
+        auto r_rgb = Mat(Size(w, h), CV_8UC3, (void *)f.get_data(), Mat::AUTO_STEP);
         Mat r_bgr;
         cvtColor(r_rgb, r_bgr, COLOR_RGB2BGR);
         return r_bgr;
-    } else if (f.get_profile().format() == RS2_FORMAT_Z16) {
-        return Mat(Size(w, h), CV_16UC1, (void*)f.get_data(), Mat::AUTO_STEP);
-    } else if (f.get_profile().format() == RS2_FORMAT_Y8) {
-        return Mat(Size(w, h), CV_8UC1, (void*)f.get_data(), Mat::AUTO_STEP);
-    } else if (f.get_profile().format() == RS2_FORMAT_DISPARITY32) {
-        return Mat(Size(w, h), CV_32FC1, (void*)f.get_data(), Mat::AUTO_STEP);
+    }
+    else if (f.get_profile().format() == RS2_FORMAT_Z16)
+    {
+        return Mat(Size(w, h), CV_16UC1, (void *)f.get_data(), Mat::AUTO_STEP);
+    }
+    else if (f.get_profile().format() == RS2_FORMAT_Y8)
+    {
+        return Mat(Size(w, h), CV_8UC1, (void *)f.get_data(), Mat::AUTO_STEP);
+    }
+    else if (f.get_profile().format() == RS2_FORMAT_DISPARITY32)
+    {
+        return Mat(Size(w, h), CV_32FC1, (void *)f.get_data(), Mat::AUTO_STEP);
     }
 
     throw std::runtime_error("Frame format is not supported yet!");
 }
 
-Mat depthFrameToMeters(const rs2::depth_frame& f)
+Mat depthFrameToMeters(const rs2::depth_frame &f)
 {
     cv::Mat dm = frameToMat(f);
     dm.convertTo(dm, CV_64F);

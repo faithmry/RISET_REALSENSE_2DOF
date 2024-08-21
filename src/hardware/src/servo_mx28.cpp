@@ -71,6 +71,7 @@ void Servo_MX28::callbackSubscribeRPY(const geometry_msgs::Vector3::ConstPtr& ms
 
 void Servo_MX28::callbackRoutine(const ros::TimerEvent& event)
 {
+    checkTorque();
     writeGoalPosition();
     readPresentPosition();
 
@@ -96,6 +97,13 @@ void Servo_MX28::callbackRoutine(const ros::TimerEvent& event)
 
 void Servo_MX28::writeGoalPosition()
 {
+    setTorque(YAW_ID, ENABLE);
+    setTorque(PITCH_ID, ENABLE);
+    packetHandler->read1ByteRx(portHandler, YAW_ID, ADDR_TORQUE_ENABLE, &dxl_error);
+    // if torque is not enabled enable it
+    if (dxl_error == 0) {
+        setTorque(YAW_ID, ENABLE);
+    }
     memcpy(param_yaw_goal_position, &goal_position.at(0), sizeof(goal_position.at(0)));
     memcpy(param_pitch_goal_position, &goal_position.at(1), sizeof(goal_position.at(1)));
     dxl_addparam_result = groupSyncWrite->addParam(YAW_ID, param_yaw_goal_position);
@@ -106,14 +114,31 @@ void Servo_MX28::writeGoalPosition()
 
 void Servo_MX28::readPresentPosition()
 {
+    dxl_addparam_result = groupSyncRead->addParam(YAW_ID);
+    dxl_addparam_result = groupSyncRead->addParam(PITCH_ID);
     dxl_comm_result = groupSyncRead->txRxPacket();
     present_position.at(0) = groupSyncRead->getData(YAW_ID, ADDR_PRESENT_POSITION, LEN_PRESENT_POSITION);
     present_position.at(1) = groupSyncRead->getData(PITCH_ID, ADDR_PRESENT_POSITION, LEN_PRESENT_POSITION);
+    groupSyncRead->clearParam();
 }
 
 int8_t Servo_MX28::setTorque(uint8_t _id, uint8_t _flag)
 {
     return packetHandler->write1ByteTxRx(portHandler, _id, ADDR_TORQUE_ENABLE, _flag, &dxl_error);
+}
+
+void Servo_MX28::checkTorque()
+{
+    for (int i = 1; i <= 2; i++) {
+        uint8_t torque_status = 0;
+        dxl_comm_result = packetHandler->read1ByteTxRx(portHandler, i, ADDR_TORQUE_ENABLE, &torque_status, &dxl_error);
+        if (dxl_comm_result != COMM_SUCCESS || dxl_error != 0) {
+            initMX28();
+        }
+
+        if (torque_status == 0)
+            setTorque(i, ENABLE);
+    }
 }
 
 std::vector<uint16_t> Servo_MX28::jointConvertToPosition(std::vector<double> joint_angle)

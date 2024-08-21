@@ -125,6 +125,7 @@ public:
     void writeGoalPosition();
     void readPresentPosition();
     int8_t setTorque(uint8_t _id, uint8_t _flag);
+    void checkTorque();
     std::vector<uint16_t> jointConvertToPosition(std::vector<double> joint_angle);
     std::vector<double> jointConvertToDegree(std::vector<uint16_t> joint_position);
 

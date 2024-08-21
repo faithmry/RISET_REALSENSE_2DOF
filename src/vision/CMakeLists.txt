@@ -7,6 +7,7 @@ project(vision)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  geometry_msgs
 )
 find_package(OpenCV REQUIRED)
 find_package(realsense2 REQUIRED)
@@ -42,16 +43,5 @@ set(REALSENSE_DEPS
   realsense2
 )
 
-add_executable(realsense src/realsense.cpp include/vision/cv-helpers.hpp)
-set_property(TARGET realsense PROPERTY CXX_STANDARD 11)
-target_link_libraries(realsense  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})
-
-add_executable(capture src/capture.cpp include/vision/cv-helpers.hpp include/vision/example-imgui.hpp)
-set_property(TARGET capture PROPERTY CXX_STANDARD 11)
+add_executable(capture src/capture.cpp)
 target_link_libraries(capture  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${REALSENSE_DEPS})
-
-add_executable(ball src/ball.cpp)
-set_property(TARGET ball PROPERTY CXX_STANDARD 11)
-target_link_libraries(ball  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${EIGEN3_LIBRARIES})
-
-# include_directories(../ ../../examples)
